@@ -1,0 +1,16 @@
+name: 'Site Notifications'
+description: 'Provides facility to show notifications to users.'
+configure: site_notifications.settings_form
+package: Custom
+
+type: module
+# core: 8.x
+
+dependencies:
+  - drupal:block
+
+# Information added by Drupal.org packaging script on 2017-06-19
+version: '8.x-1.2'
+core: '8.x'
+project: 'site_notifications'
+datestamp: 1497898178
