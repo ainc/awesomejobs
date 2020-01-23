@@ -10,7 +10,7 @@ dependencies:
 library_dependencies:
   - fontawesome-iconpicker
 
-# Information added by Drupal.org packaging script on 2019-12-20
-version: '8.x-1.7'
+# Information added by Drupal.org packaging script on 2019-12-28
+version: '8.x-1.8'
 project: 'fontawesome_menu_icons'
-datestamp: 1576829296
+datestamp: 1577535496

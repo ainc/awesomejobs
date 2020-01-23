@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\message_subscribe\Kernel;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Test\AssertMailTrait;
 use Drupal\field\Entity\FieldConfig;
@@ -242,7 +241,7 @@ class SubscribersTest extends MessageSubscribeTestBase {
     $message = Message::create(['template' => $this->template->id()]);
 
     $node = $this->nodes[0];
-    $node->setPublished(FALSE);
+    $node->setUnpublished();
     $node->save();
 
     // Add permission to view own unpublished content.
@@ -405,7 +404,7 @@ class SubscribersTest extends MessageSubscribeTestBase {
    * @covers ::sendMessage
    */
   public function testFieldedMessageBundles() {
-    $field_name = Unicode::strtolower($this->randomMachineName());
+    $field_name = mb_strtolower($this->randomMachineName());
     $field_storage = FieldStorageConfig::create([
       'field_name' => $field_name,
       'entity_type' => 'message',

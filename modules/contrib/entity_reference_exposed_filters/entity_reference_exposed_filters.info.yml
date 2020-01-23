@@ -4,8 +4,8 @@ description: 'Entity Reference Nodes displayed as exposed filters with titles in
 # version: VERSION
 # core: 8.x
 
-# Information added by Drupal.org packaging script on 2017-08-08
-version: '8.x-1.0-alpha1'
+# Information added by Drupal.org packaging script on 2018-04-26
+version: '8.x-1.0-alpha2'
 core: '8.x'
 project: 'entity_reference_exposed_filters'
-datestamp: 1502216947
+datestamp: 1524753492

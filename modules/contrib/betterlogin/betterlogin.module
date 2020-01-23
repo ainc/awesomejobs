@@ -94,15 +94,6 @@ function betterlogin_preprocess_betterlogin(&$variables) {
   $variables['#cache']['contexts'][] = 'route';
   $variables['page']['#cache']['contexts'][] = 'route';
 
-  // Remove all blocks from the content region (such as page title and local
-  // tasks) except the "Main page content" block.
-  foreach (Element::children($variables['page']['content']) as $element) {
-    if (isset($variables['page']['content'][$element]['#plugin_id']) && $variables['page']['content'][$element]['#plugin_id'] == 'system_main_block') {
-      $variables['page']['content'] = $variables['page']['content'][$element];
-      break;
-    }
-  }
-
   // Only show the register account link if visitors have permission to
   // register their accounts.
   $register_url = Url::fromRoute('user.register');
