@@ -52,7 +52,7 @@ function fontawesome_menu_icons_form_menu_link_content_form_alter(&$form, FormSt
   $form['fa_icon']['fa_icon_prefix'] = [
     '#type'          => 'select',
     '#title'         => t('Style prefix'),
-    '#default_value' => !empty($options['fa_icon_prefix']) ? $options['fa_icon_prefix'] : 'fa',
+    '#default_value' => !empty($menu_link_options['fa_icon_prefix']) ? $menu_link_options['fa_icon_prefix'] : 'fa',
     '#options'       => [
       'fa'  => 'fa (' . t('4.x only') . ')',
       'fas' => 'fas (' . t('5.x only') . ')',
@@ -66,7 +66,7 @@ function fontawesome_menu_icons_form_menu_link_content_form_alter(&$form, FormSt
   $form['fa_icon']['fa_icon_tag'] = [
     '#type'          => 'select',
     '#title'         => t('HTML tag'),
-    '#default_value' => !empty($options['fa_icon_tag']) ? $options['fa_icon_tag'] : 'i',
+    '#default_value' => !empty($menu_link_options['fa_icon_tag']) ? $menu_link_options['fa_icon_tag'] : 'i',
     '#options'       => [
       'i'    => 'i',
       'span' => 'span',
@@ -370,8 +370,8 @@ function _fontawesome_menu_icons_preprocess_menu_item(&$item) {
 
   if (!empty($options['fa_icon']) && empty($options['already_processed'])) {
     $class = $options['fa_icon'];
-    $prefix = !empty($variables['options']['fa_icon_prefix']) ? $variables['options']['fa_icon_prefix'] : 'fa';
-    $tag = !empty($variables['options']['fa_icon_tag']) ? $variables['options']['fa_icon_tag'] : 'i';
+    $prefix = !empty($options['fa_icon_prefix']) ? $options['fa_icon_prefix'] : 'fa';
+    $tag = !empty($options['fa_icon_tag']) ? $options['fa_icon_tag'] : 'i';
     $appearance = !empty($options['fa_icon_appearance']) ? $options['fa_icon_appearance'] : 'before';
     $is_link = ($url->isRouted() && ($url->getRouteName() == '<nolink>')) ? FALSE : TRUE;
 
